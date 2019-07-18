@@ -4,9 +4,11 @@
 # But your function should be able to work with any list value passed to it.
 
 def comma(list):
-    list = ", ".join(list)    # To get the newly joined 'list', need to assign formatted 'list' as 'list'
+    list = ", ".join(map(str, list))    # To get the newly joined 'list', need to assign formatted 'list' as 'list'
+                                        # map(str, list) is used to be sure that non-string items can also be joined
+                                        # by first, converting all items to string
     return list
 
-spam = ['apples', 'bananas', 'tofu', 'cats']
+spam = ['apples', 10, 'tofu', 'cats']
 
 print(comma(spam))
